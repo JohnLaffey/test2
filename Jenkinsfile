@@ -17,6 +17,7 @@ pipeline {
                     namespace: 'default'
                        ])
         {
+	sh 'export KUBECONFIG=/home/kube/.kube/config'	
 	sh 'kubectl'
         }
            }      
