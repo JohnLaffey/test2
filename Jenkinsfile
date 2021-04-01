@@ -18,34 +18,9 @@ pipeline {
                     namespace: 'default'
                        ])
         {
-        dir("/home/kube/edgey-corp-nodejs/DataProcessingService")  {
-          sh 'npm install&'
-          sleep 10
-          sh '(npm run start&)'
-          sleep 15
-          sh 'telepresence connect'
-          sleep 10
-          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
-          sleep 10
-          sh 'result=$(curl -s "http://localhost:3000/color")'
-        } 
+	sh 'kubectl get nodes'
         }
-      }         
-
-          }
-    stage('stagetwo'){
-        steps {
-           sh 'result=$(echo $result | tr -d '///"')'
-           sh ''' if [[ "$color" != $result ]]
-              then                
-              currentBuild.result = 'ABORTED'
-              error ('Values do not match, stopping pipeline')''' 
-              }     
-    }      
-          }
-  post {
-    unsuccessful {
-     echo 'This build has failed.'
-    }        
- }
+           }      
+    }
+  }
 }
