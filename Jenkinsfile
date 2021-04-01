@@ -18,6 +18,7 @@ pipeline {
                        ])
         {
 	sh 'export KUBECONFIG=/home/kube/.kube/config'	
+	sh 'echo $KUBECONFIG'
 	sh 'kubectl'
         }
            }      
