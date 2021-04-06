@@ -22,7 +22,7 @@ pipeline {
           sleep 10
           sh '(npm run start&)'
           sleep 15
-//          sh 'telepresence connect'
+          sh 'kubectl config view'
           sleep 10
 //          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
           sleep 10
