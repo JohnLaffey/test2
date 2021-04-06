@@ -17,7 +17,7 @@ pipeline {
                     namespace: 'default'
                        ])
         {
-	sh 'kubectl get pods'
+	sh 'kubectl cluster-info'
         }
            }      
     }
