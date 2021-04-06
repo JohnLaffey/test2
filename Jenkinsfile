@@ -22,7 +22,7 @@ pipeline {
           sleep 10
           sh '(npm run start&)'
           sleep 15
-          sh 'kubectl get pods'
+          sh 'whoami'
           sleep 10
 //          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
           sleep 10
