@@ -28,7 +28,11 @@ pipeline {
           sleep 10
           sh 'result=$(curl -s "http://localhost:3000/color")'
 	  sh 'echo $result'
-	  sh 'echo $color'	  
+	  sh 'echo $color'
+	  sh ''' if [[ "$color" != $result ]]
+              then                
+              currentBuild.result = 'ABORTED'
+              error ('Values do not match, stopping pipeline')'''	  
         } 
         }
            }      
