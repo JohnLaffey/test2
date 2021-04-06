@@ -10,7 +10,7 @@ pipeline {
         color = 'purple'
       }
       steps {
-        withKubeConfig([credentialsId: 'e1edc5dd-52de-42fe-9451-732149a23353',
+        withKubeConfig([credentialsId: 'jenkins-token',
                     serverUrl: 'https://192.168.0.46:6443',
                     contextName: 'kubernetes-admin@kubernetes',
                     clusterName: 'kubernetes',
