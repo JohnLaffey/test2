@@ -22,9 +22,6 @@ pipeline {
           sleep 10
           sh '(npm run start&)'
           sleep 15
-          sh '''sudo su kube
-	        whoami
-		kubectl get pods'''
           sh 'whoami'
           sleep 10
 //          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
