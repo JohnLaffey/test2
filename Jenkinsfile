@@ -17,7 +17,17 @@ pipeline {
                     namespace: 'default'
                        ])
         {
-	sh 'kubectl cluster-info'
+	  dir("/home/kube/edgey-corp-nodejs/DataProcessingService")  {
+          sh 'npm install&'
+          sleep 10
+          sh '(npm run start&)'
+          sleep 15
+          sh 'telepresence connect'
+          sleep 10
+          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
+          sleep 10
+          sh 'result=$(curl -s "http://localhost:3000/color")'
+        } 
         }
            }      
     }
