@@ -18,7 +18,7 @@ pipeline {
                        ])
         {
 	  dir("/home/kube/edgey-corp-nodejs/DataProcessingService")  {
-          sh 'sudo npm install&'
+          sh 'npm install&'
           sleep 10
           sh '(npm run start&)'
           sleep 15
