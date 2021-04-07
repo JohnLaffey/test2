@@ -30,7 +30,7 @@ pipeline {
 	  echo $color
 	  if [ $RESULT != $COLOR ]
 	  then
-          echo Values do not match, stopping pipeline
+
           fi '''
         } 
         }
