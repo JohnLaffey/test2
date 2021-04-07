@@ -24,13 +24,9 @@ pipeline {
           sleep 15
           sleep 10
           sh '/jenkins/telepresence.sh'
-//          sleep 10 
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
-//	  echo "This is just a line break"
 	  result=$(echo $result | tr -d '///"')	 
-//	  echo $result
-//	  echo $color 
           if [[ $result != $color ]]
 	  then
 	  echo "nope" '''
