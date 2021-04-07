@@ -8,6 +8,7 @@ pipeline {
     stage('stageone') {
       environment {
         color = 'orange'
+	 currentBuild.result = 'SUCCESS'      
       }
       steps {
         withKubeConfig([credentialsId: 'e1edc5dd-52de-42fe-9451-732149a23353',
