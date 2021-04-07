@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('stageone') {
       environment {
-        color = 'purple'
+        color = 'blue'
       }
       steps {
         withKubeConfig([credentialsId: 'e1edc5dd-52de-42fe-9451-732149a23353',
@@ -27,6 +27,7 @@ pipeline {
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
 	  result=$(echo $result | tr -d '///"')	 
+	  echo $color
 	  if [ "$RESULT" != "$COLOR" ]
 	  then
           echo Values do not match, stopping pipeline
