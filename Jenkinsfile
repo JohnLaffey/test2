@@ -23,8 +23,8 @@ pipeline {
           sh '(npm run start&)'
           sleep 15
           sleep 10
-//          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
-          sleep 10 
+          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
+//          sleep 10 
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
 	  echo "This is just a line break"
