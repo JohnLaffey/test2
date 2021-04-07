@@ -21,6 +21,7 @@ pipeline {
 	  dir("/home/kube/edgey-corp-nodejs/DataProcessingService")  {
           sh 'npm install&'
           sleep 10
+          sh 'echo $buildResult'
           sh '(npm run start&)'
           sleep 10
           sh '/jenkins/telepresence.sh'
