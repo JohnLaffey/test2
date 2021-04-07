@@ -27,7 +27,7 @@ pipeline {
 	  result=$(curl -s "http://localhost:3000/color")
 	  result=$(echo $result | tr -d '///"')	 
 	  echo $color
-	  if [ $RESULT != $COLOR ]
+	  if [ '$RESULT' != '$COLOR' ]
 	  then
           echo Values do not match, stopping pipeline
           fi '''
