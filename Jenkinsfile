@@ -29,8 +29,11 @@ pipeline {
 	  result=$(curl -s "http://localhost:3000/color")
 	  echo "This is just a line break"
 	  result=$(echo $result | tr -d '///"')	 
-	  echo $result
-	  echo $color '''
+//	  echo $result
+//	  echo $color 
+          if [[ $result != $color ]]
+	  then
+	  currentBuild.result = 'ABORTED' echo "nope" '''
         } 
         }
            }      
