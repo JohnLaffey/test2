@@ -23,7 +23,7 @@ pipeline {
           sh '(npm run start&)'
           sleep 15
           sleep 10
-          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
+          sh '/jenkins/telepresence.sh'
 //          sleep 10 
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
