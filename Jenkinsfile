@@ -21,7 +21,6 @@ pipeline {
           sh 'npm install&'
           sleep 10
           sh '(npm run start&)'
-          sleep 15
           sleep 10
           sh '/jenkins/telepresence.sh'
           sh '''
