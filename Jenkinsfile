@@ -25,11 +25,11 @@ pipeline {
           sleep 10
 //          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
           sleep 10 
-          sh 'result=$(curl -s "http://localhost:3000/color")'
-//	  sh 'result=$(echo $result | tr -d '///"')'	
-	  sh 'echo "This is just a line break"	 ' 
-	  sh 'echo "The result color is " $result'
-	  sh 'echo $color'
+          sh '''
+	  result=$(curl -s "http://localhost:3000/color")
+	  echo "This is just a line break"
+	  echo "The result color is " $result
+	  echo $color '''
         } 
         }
            }      
