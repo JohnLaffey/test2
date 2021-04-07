@@ -30,6 +30,7 @@ pipeline {
 	  if [ $result != $color ]
 	  then
           echo Values do not match, stopping pipeline
+	  currentBuild.result = 'ABORTED'
           fi '''
         } 
         }
