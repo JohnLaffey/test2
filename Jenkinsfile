@@ -28,6 +28,7 @@ pipeline {
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
 	  echo "This is just a line break"
+	  result=$(echo $result | tr -d '///"')	 
 	  echo "The result color is " $result
 	  echo $color '''
         } 
