@@ -27,8 +27,6 @@ pipeline {
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
 	  result=$(echo $result | tr -d '///"')	 
-          if [[ $result != $color ]]
-	  then
 	  echo "nope" '''
         } 
         }
