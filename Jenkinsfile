@@ -25,9 +25,9 @@ pipeline {
           sh 'whoami'
           sleep 10
 //          sh 'telepresence intercept dataprocessingservice --port 3000 --mount=false'
-          sleep 10 */
+          sleep 10 
           sh 'result=$(curl -s "http://localhost:3000/color")'
-	  sh 'echo $result'
+	  sh 'echo $result'*/
 	  sh 'echo $color'
         } 
         }
