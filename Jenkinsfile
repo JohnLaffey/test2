@@ -23,14 +23,14 @@ pipeline {
           sh '(npm run start&)'
           sleep 15
           sleep 10
-          sh '/jenkins/telepresenc.sh'
+          sh '/jenkins/telepresence.sh'
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
 	  result=$(echo $result | tr -d '///"')	 
 	  echo $color
 	  if [ $RESULT != $COLOR ]
 	  then
-
+          echo Values do not match, stopping pipeline
           fi '''
         } 
         }
