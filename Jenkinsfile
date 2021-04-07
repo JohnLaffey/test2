@@ -23,7 +23,7 @@ pipeline {
           sh '(npm run start&)'
           sleep 15
           sleep 10
-          sh '/jenkins/telepresence.sh'
+          sh '/jenkins/telepresenc.sh'
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
 	  result=$(echo $result | tr -d '///"')	 
