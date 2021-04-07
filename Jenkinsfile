@@ -29,9 +29,6 @@ pipeline {
           sh 'result=$(curl -s "http://localhost:3000/color")'
 	  sh 'echo $result'
 	  sh 'echo $color'
-	            script {
-              if $color != $result then {currentBuild.result = 'ABORTED'}'
-          }
         } 
         }
            }      
