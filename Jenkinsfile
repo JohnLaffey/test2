@@ -8,7 +8,7 @@ pipeline {
     stage('stageone') {
       environment {
         color = 'orange'
-	 currentBuild.result = 'SUCCESS'      
+//        currentResult = 'SUCCESS'      
       }
       steps {
         withKubeConfig([credentialsId: 'e1edc5dd-52de-42fe-9451-732149a23353',
@@ -31,7 +31,7 @@ pipeline {
 	  if [ $result != $color ]
 	  then
           echo Values do not match, stopping pipeline
-	  currentBuild.result = 'FAILURE'
+	  buildResult = 'FAILURE'
           fi '''
         } 
         }
