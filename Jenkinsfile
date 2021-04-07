@@ -30,8 +30,9 @@ pipeline {
 	  echo $color
 	  if [ $result != $color ]
 	  then
+	  buildResult='FAILURE'
           echo Values do not match, stopping pipeline
-	  buildResult = 'FAILURE'
+	
           fi '''
         } 
         }
