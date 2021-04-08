@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('stageone') {
       environment {
-        color = 'orange'
+        color = 'blue'
  //       buildResult = 'SUCCESS'      
       }
       steps {
