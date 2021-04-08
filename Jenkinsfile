@@ -19,7 +19,7 @@ pipeline {
                        ])
         {
 	  dir("/home/kube/edgey-corp-nodejs/DataProcessingService")  {
-          sh 'echo "The Test Value is " $color
+          sh 'echo "The Test Value is " $color'
           sh 'npm install&'
           sleep 10
           sh '(npm run start&)'
@@ -28,7 +28,6 @@ pipeline {
           sh '''
 	  result=$(curl -s "http://localhost:3000/color")
 	  result=$(echo $result | tr -d '///"')	 
-	  echo $color
 	  if [ $result != $color ]
 	  then          echo Values do not match, stopping pipeline
           currentBuild.result='FAILURE'
