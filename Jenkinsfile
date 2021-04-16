@@ -20,7 +20,7 @@ pipeline {
         {
 	  dir("/home/kube/edgey-corp-nodejs/DataProcessingService")  {
           sh 'echo "The Test Value is " $color'
-	  sh 'curl -v -u admin:supersecure --upload-file Dockerfile http://192.168.0.58:8081/repository/MyRawHosted/'	  
+	  sh 'curl -v -u admin:supersecure --upload-file package.json http://192.168.0.58:8081/repository/MyRawHosted/'	  
           sh 'npm install&'
           sleep 10
           sh '(npm run start&)'
